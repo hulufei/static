@@ -1,0 +1,81 @@
+@import 'nib'
+@import 'modal'
+@import 'forms.styl'
+@import 'btn.styl'
+
+// login modal
+.login-modal
+  .close
+    line-height: 25px
+  form
+    width: 260px
+    margin: 0 auto 20px
+  input
+    width: 210px
+    height: 27px
+    margin-bottom: 5px
+    padding-left: 12px
+  .btn
+    width: 62px
+    height: 27px
+    line-height: @height
+    font-size: 14px
+    border: 1px solid inputBorder
+    border-radius(0)
+  .login-btn
+    color: grayColor
+    &:hover
+      color: lighten(@color, 30%)
+  .register-btn
+    color: errorText
+    &:hover
+      color: lighten(@color, 30%)
+  .error
+    .help-inline
+      font-size: 10px
+      background-image: url(img/icon-state-error.png)
+      margin-left: 5px
+      padding-left: 18px
+
+.oauths
+  width: 370px
+  margin: 5px auto 0
+  border-bottom: 1px dashed #dcdcdc
+  padding-bottom: 5px
+  .sina
+    background: #C73B27 url(img/icon-login-sina.png) no-repeat scroll 17px center
+    margin-right: 10px
+  .tecent
+    background: #279FC7 url(img/icon-login-tecent.png) no-repeat scroll 31px center
+  .renren
+    background: #27639F url(img/icon-login-renren.png) no-repeat scroll 20px center
+    margin-right: 10px
+  .douban
+    background: #278B3B url(img/icon-login-douban.png) no-repeat scroll 26px center
+
+.oauth-entry
+  float: left
+  padding-left: 65px
+  width: 180px - @padding-left
+  height: 40px
+  line-height: @height
+  font-size: 16px
+  color: #fff
+  margin-bottom: 10px
+
+// IE hacks
+.lt-ie9
+  .login-modal
+    input
+      line-height: 27px
+.lt-ie8
+  .login-modal
+    .close
+      line-height: 20px
+    .oauths
+      padding-bottom: 15px
+.lt-ie7
+  .login-modal
+    .error
+      .help-inline
+        vertical-align: middle

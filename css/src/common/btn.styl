@@ -1,0 +1,46 @@
+.btn
+  display: inline-block
+  ie7-inline-block()
+  size(120px, 37px)
+  border-radius(5px)
+  border: 0
+  line-height: 37px
+  color: #fff
+  font-size: 13px
+  text-align: center
+.btn-green
+  background-color: subColor
+  &:hover
+    background-color: lighten(subColor, 10%)
+.btn-gray
+  background-color: grayColor
+  &:hover
+    background-color: lighten(grayColor, 10%)
+.btn-red
+  background-color: mainColor
+  &:hover
+    background-color: lighten(mainColor, 10%)
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner
+    padding: 0;
+    border: 0;
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+  &.btn-large
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  &.btn-small
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  &.btn-mini
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+

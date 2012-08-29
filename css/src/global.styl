@@ -1,0 +1,319 @@
+@import 'nib'
+@import 'common'
+@import 'common/base'
+@import 'common/forms'
+
+.container
+  width: containerWidth
+  margin: auto;
+
+/* ==============================================================
+  TOPBAR 
+  =============================================================== */
+.logo
+  float: left
+.topbar
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: topbarHeight
+  background-color: mainColor
+  margin-bottom: px2em(15)
+  z-index: zindexFixedNavbar
+  a
+    color: #FFF
+  .nav
+    float: right
+    font-size: 17px
+    margin-top: 5px
+  .meet, .me, .notify
+    line-height: @height + 5
+    margin-left: 20px
+    display: inline-block
+    ie7-inline-block()
+  .meet
+    padding-left: 32px
+    background: transparent url(img/icon-meet.png) no-repeat scroll 0 12px
+  .me
+    padding-left: 38px
+    background: transparent url(img/icon-me.png) no-repeat scroll 0 16px
+  .notify
+    font-size: baseFontSize
+    font-weight: bold
+    width: 128px
+    line-height: 1
+    margin-left: 50px
+    position: relative
+    bottom: -2px
+    a
+      padding-left: 15px
+    .setting
+      background: transparent url(img/icon-setting.png) no-repeat scroll 100px center
+  // variable
+  hdHeight = 35px
+  .dropdown-hd
+    a
+      display: block
+      background: transparent url(img/icon-mail.png) no-repeat scroll 100px center
+      height: hdHeight - 2
+      line-height: @height
+      padding-right: 30px
+      ellipsis()
+      border-radius(5px 5px 0 0)
+    .active
+      color: dropdownLinkColor
+      background-image: url(img/icon-mail-active.png)
+      background-color: dropdownBackground
+      border-bottom: 2px solid dropdownDividerTop
+  .dropdown-cnt
+    position: absolute
+    left: 0
+    top: hdHeight
+    width: 100%
+    background-color: dropdownBackground
+    a
+      display: block;
+      font-weight: normal
+      color: dropdownLinkColor
+      height: 30px;
+      line-height: @height
+      border-bottom: 1px solid dropdownDividerBottom
+      &:hover
+        background-color: dropdownLinkBackgroundHover
+
+
+/* ---- style for meet page ---- */
+.wrapper
+  @extend .container
+  margin-top: topbarHeight + 15
+
+
+/* ==============================================================
+  PROFILE PANEL 
+  =============================================================== */
+.sidebar
+  width: sidebarWidth
+  color: #fff
+  float: left
+
+.profile, .groups, .share
+  margin-bottom: 10px
+
+.profile
+  base-style()
+    float: left
+    margin: 0 2px 2px 0
+  font: bold 16px/1.5 baseFontFamily
+  .avatar
+    base-style()
+    square(90px)
+  .own
+    @extend .profile .avatar
+    background-color: mainColor
+  .cp
+    height: 20px
+    line-height: @height
+    background: mainColor url(img/icon-profile-cp.gif) no-repeat scroll 0 center
+    padding-left: 35px
+    margin: 15px
+  .mp
+    @extend .profile .cp
+    background-image: url(img/icon-profile-mp.gif)
+  .following, .follower
+    base-style()
+    width: 90px
+    background-color: mainColor
+    a
+      display: block
+      color: #fff
+      height: 40px
+      line-height: @height
+      background: mainColor url(img/icon-profile-following.gif) no-repeat scroll 0 center
+      padding-left: 35px
+      margin-left: 15px
+  .follower
+    a
+      background-image: url(img/icon-profile-follower.gif)
+
+.group
+  img, &.more
+    @extend .profile .avatar
+  &.more
+    background: transparent url(img/group-add.jpg) no-repeat scroll 0 0
+    &:hover
+      background-image: url(img/group-add-active.jpg)
+
+.share
+  .hd
+    font-size: px2em(16)
+    text-indent: px2em(10)
+    width: sidebarWidth - 2
+    height: 40px
+    line-height: @height
+    background-color: #ccc
+    margin-bottom: 2px
+  .actions
+    a
+      @extend .profile .avatar
+      display: block
+      background: #fff url(img/bg-block.png) no-repeat scroll 0 0
+      img
+        size(78px, 64px)
+        margin: 10px 6px
+      &:hover
+        background: #999
+
+
+/* ---- main ---- */
+.main
+  float: left
+  margin-left: 15px
+  width: mainWidth - @margin-left
+
+/* ---- status ---- */
+.statuses
+  background-color: #eee
+
+.status
+  float: left
+  margin-left: 10px
+  margin-bottom: 20px
+  width: ((mainWidth - 15px - @margin-left * 3) / 2)
+  .status-author
+    float: left
+    width: 45px
+    margin-top: 10px
+    text-align: center
+    word-wrap: break-word
+    .avatar
+      square(@width)
+    .nickname
+      display: block
+    .timestamp 
+      display: block
+
+  .status-mod
+    position: relative
+    float: left
+    background: #fff
+    padding: 10px 20px
+    margin-left: 15px
+    // TODO: use border-box: content
+    width: @width - @margin-left - 20 * 2 - 45px
+    border-radius(8px)
+    &:before
+      display: block
+      position: absolute
+      left: -10px
+      top: 20px
+      content: ""
+      border-width: 10px 10px 10px 0
+      border-style: dashed solid dashed dashed
+      border-color: transparent #fff transparent transparent
+    .hd
+      color: #999
+      background: transparent none no-repeat scroll 0 0
+      padding-left: 30px
+      line-height: 25px
+  &.say .hd
+    background-image: url(img/icon-status-say.png)
+  &.photo .hd
+    background-image: url(img/icon-status-photo.png)
+  &.talk .hd
+    background-image: url(img/icon-status-talk.png)
+  &.callon .hd
+    padding-left: 35px
+    background-image: url(img/icon-status-callon.png)
+  &.others .hd
+    background-image: url(img/icon-status-others.png)
+
+  .expand-cnt
+    display: none
+    float: right
+    background-color: #FCFBFA
+    padding: 10px 20px
+    margin-right: 10px
+    // TODO: use border-box: content
+    width: @width - 2 * @margin-right - 20 * 2 - 45px - 15
+    border-radius(0, 0, 8px, 8px)
+    input
+      width: 245px
+      margin: 10px 0
+  .collapse
+    display: block
+    color: #ccc
+    float: right
+    &:hover
+      color: lighten(@color, 20%)
+  .send-btn
+    float: right
+    border: 0
+    padding-right: 20px
+    background: transparent url(img/icon-send.png) no-repeat scroll right center
+    cursor: pointer
+    &:hover
+      color: lightGrayColor
+  .comments-list
+    .comments-item
+      margin-bottom: 15px
+    .avatar
+      vertical-align: middle
+      square(25px)
+    .content
+      color: grayColor
+      margin-left: 10px
+    .timestamp
+      color: lightGrayColor
+      margin-left: 10px
+
+.status-mod
+  .cnt
+    margin: 10px 0
+    img
+      max-width: 100%
+  .question, .answer
+    margin-bottom: 10px
+  .question
+    color: grayColor
+  .footer
+    float: right
+  .mo, .comment
+    float: left
+    height: 21px
+    font: bold 12px/@height arial
+    margin-left: 15px
+    .count
+      color: #D5836F
+  .mo
+    background: transparent url(img/icon-mo.png) no-repeat scroll 0 0
+    color: #fff
+    text-align: center
+    .text
+      font-size: 16px
+      padding: 5px 10px
+    &:hover
+      width: 64px
+      background-image: url(img/icon-mo-active.png)
+      .text:after
+        content: "一下"
+        padding: 0
+        font-size: 12px
+      .count
+        display: none
+  .comment
+    padding-left: 24px
+    background: transparent url(img/icon-comment.png) no-repeat scroll 0 0
+    .count
+      margin-left: 5px
+    &:hover
+      background-image: url(img/icon-comment-active.png)
+      .count
+        color: mainColor
+
+/* ---- IE hacks ---- */
+.lt-ie8
+  .topbar .me
+    margin-right: 50px
+  .topbar .notify
+    margin-left: 0

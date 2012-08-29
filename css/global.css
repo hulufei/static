@@ -1,0 +1,547 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+body {
+  font: 0.75em/1.5 "Microsoft Yahei", thoma, arial;
+  background-color: #f0f0f0;
+  min-width: 960px;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+.hide {
+  display: none;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.cf {
+  zoom: 1;
+}
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+label,
+input,
+button,
+select,
+textarea {
+  font: normal 12px/1.5 "Microsoft Yahei", thoma, arial;
+}
+textarea {
+  height: auto;
+}
+input,
+textarea {
+  color: #959595;
+  border: 1px solid #c8c8c8;
+}
+input:focus,
+textarea:focus {
+  border-color: rgba(0,0,0,0.3);
+  outline: 0;
+  outline: thin dotted 9;
+/* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px rgba(0,0,0,.3);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px rgba(0,0,0,.3);
+}
+.help-inline {
+  display: none;
+  font-size: 14px;
+  margin-left: 15px;
+  padding-left: 25px;
+  background: transparent none no-repeat scroll 0 center;
+}
+.control-group.error .help-inline {
+  display: inline;
+  color: #a91e32;
+  background-image: url("img/icon-state-error-m.png");
+}
+.control-group.valid .help-inline {
+  display: inline;
+  background-image: url("img/icon-state-success-m.png");
+}
+.container,
+.wrapper {
+  width: 960px;
+  margin: auto;
+}
+/* ==============================================================
+  TOPBAR 
+  =============================================================== */
+.logo {
+  float: left;
+}
+.topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #aa1e32;
+  margin-bottom: 1.25em;
+  z-index: 1030;
+}
+.topbar a {
+  color: #fff;
+}
+.topbar .nav {
+  float: right;
+  font-size: 17px;
+  margin-top: 5px;
+}
+.topbar .meet,
+.topbar .me,
+.topbar .notify {
+  line-height: 65px;
+  margin-left: 20px;
+  display: inline-block;
+  *display: inline;
+/* IE7 inline-block hack */
+  *zoom: 1;
+}
+.topbar .meet {
+  padding-left: 32px;
+  background: transparent url("img/icon-meet.png") no-repeat scroll 0 12px;
+}
+.topbar .me {
+  padding-left: 38px;
+  background: transparent url("img/icon-me.png") no-repeat scroll 0 16px;
+}
+.topbar .notify {
+  font-size: 12px;
+  font-weight: bold;
+  width: 128px;
+  line-height: 1;
+  margin-left: 50px;
+  position: relative;
+  bottom: -2px;
+}
+.topbar .notify a {
+  padding-left: 15px;
+}
+.topbar .notify .setting {
+  background: transparent url("img/icon-setting.png") no-repeat scroll 100px center;
+}
+.topbar .dropdown-hd a {
+  display: block;
+  background: transparent url("img/icon-mail.png") no-repeat scroll 100px center;
+  height: 33px;
+  line-height: 33px;
+  padding-right: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.topbar .dropdown-hd .active {
+  color: #7b7b7b;
+  background-image: url("img/icon-mail-active.png");
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e7e7e7;
+}
+.topbar .dropdown-cnt {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+.topbar .dropdown-cnt a {
+  display: block;
+  font-weight: normal;
+  color: #7b7b7b;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ebebeb;
+}
+.topbar .dropdown-cnt a:hover {
+  background-color: #eee;
+}
+/* ---- style for meet page ---- */
+.wrapper {
+  margin-top: 75px;
+}
+/* ==============================================================
+  PROFILE PANEL 
+  =============================================================== */
+.sidebar {
+  width: 185px;
+  color: #fff;
+  float: left;
+}
+.profile,
+.groups,
+.share {
+  margin-bottom: 10px;
+}
+.profile {
+  font: bold 16px/1.5 "Microsoft Yahei", thoma, arial;
+}
+.profile .avatar,
+.profile .own,
+.group img,
+.group.more,
+.share .actions a {
+  float: left;
+  margin: 0 2px 2px 0;
+  width: 90px;
+  height: 90px;
+}
+.profile .own {
+  background-color: #aa1e32;
+}
+.profile .cp,
+.profile .mp {
+  height: 20px;
+  line-height: 20px;
+  background: #aa1e32 url("img/icon-profile-cp.gif") no-repeat scroll 0 center;
+  padding-left: 35px;
+  margin: 15px;
+}
+.profile .mp {
+  background-image: url("img/icon-profile-mp.gif");
+}
+.profile .following,
+.profile .follower {
+  float: left;
+  margin: 0 2px 2px 0;
+  width: 90px;
+  background-color: #aa1e32;
+}
+.profile .following a,
+.profile .follower a {
+  display: block;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  background: #aa1e32 url("img/icon-profile-following.gif") no-repeat scroll 0 center;
+  padding-left: 35px;
+  margin-left: 15px;
+}
+.profile .follower a {
+  background-image: url("img/icon-profile-follower.gif");
+}
+.group.more {
+  background: transparent url("img/group-add.jpg") no-repeat scroll 0 0;
+}
+.group.more:hover {
+  background-image: url("img/group-add-active.jpg");
+}
+.share .hd {
+  font-size: 1.3333333333333333em;
+  text-indent: 0.8333333333333334em;
+  width: 183px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ccc;
+  margin-bottom: 2px;
+}
+.share .actions a {
+  display: block;
+  background: #fff url("img/bg-block.png") no-repeat scroll 0 0;
+}
+.share .actions a img {
+  width: 78px;
+  height: 64px;
+  margin: 10px 6px;
+}
+.share .actions a:hover {
+  background: #999;
+}
+/* ---- main ---- */
+.main {
+  float: left;
+  margin-left: 15px;
+  width: 760px;
+}
+/* ---- status ---- */
+.statuses {
+  background-color: #eee;
+}
+.status {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 365px;
+}
+.status .status-author {
+  float: left;
+  width: 45px;
+  margin-top: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.status .status-author .avatar {
+  width: 45px;
+  height: 45px;
+}
+.status .status-author .nickname {
+  display: block;
+}
+.status .status-author .timestamp {
+  display: block;
+}
+.status .status-mod {
+  position: relative;
+  float: left;
+  background: #fff;
+  padding: 10px 20px;
+  margin-left: 15px;
+  width: 265px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.status .status-mod:before {
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  content: "";
+  border-width: 10px 10px 10px 0;
+  border-style: dashed solid dashed dashed;
+  border-color: transparent #fff transparent transparent;
+}
+.status .status-mod .hd {
+  color: #999;
+  background: transparent none no-repeat scroll 0 0;
+  padding-left: 30px;
+  line-height: 25px;
+}
+.status.say .hd {
+  background-image: url("img/icon-status-say.png");
+}
+.status.photo .hd {
+  background-image: url("img/icon-status-photo.png");
+}
+.status.talk .hd {
+  background-image: url("img/icon-status-talk.png");
+}
+.status.callon .hd {
+  padding-left: 35px;
+  background-image: url("img/icon-status-callon.png");
+}
+.status.others .hd {
+  background-image: url("img/icon-status-others.png");
+}
+.status .expand-cnt {
+  display: none;
+  float: right;
+  background-color: #fcfbfa;
+  padding: 10px 20px;
+  margin-right: 10px;
+  width: 245px;
+  -webkit-border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
+}
+.status .expand-cnt input {
+  width: 245px;
+  margin: 10px 0;
+}
+.status .collapse {
+  display: block;
+  color: #ccc;
+  float: right;
+}
+.status .collapse:hover {
+  color: #d6d6d6;
+}
+.status .send-btn {
+  float: right;
+  border: 0;
+  padding-right: 20px;
+  background: transparent url("img/icon-send.png") no-repeat scroll right center;
+  cursor: pointer;
+}
+.status .send-btn:hover {
+  color: #959595;
+}
+.status .comments-list .comments-item {
+  margin-bottom: 15px;
+}
+.status .comments-list .avatar {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+}
+.status .comments-list .content {
+  color: #636363;
+  margin-left: 10px;
+}
+.status .comments-list .timestamp {
+  color: #959595;
+  margin-left: 10px;
+}
+.status-mod .cnt {
+  margin: 10px 0;
+}
+.status-mod .cnt img {
+  max-width: 100%;
+}
+.status-mod .question,
+.status-mod .answer {
+  margin-bottom: 10px;
+}
+.status-mod .question {
+  color: #636363;
+}
+.status-mod .footer {
+  float: right;
+}
+.status-mod .mo,
+.status-mod .comment {
+  float: left;
+  height: 21px;
+  font: bold 12px/21px arial;
+  margin-left: 15px;
+}
+.status-mod .mo .count,
+.status-mod .comment .count {
+  color: #d5836f;
+}
+.status-mod .mo {
+  background: transparent url("img/icon-mo.png") no-repeat scroll 0 0;
+  color: #fff;
+  text-align: center;
+}
+.status-mod .mo .text {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.status-mod .mo:hover {
+  width: 64px;
+  background-image: url("img/icon-mo-active.png");
+}
+.status-mod .mo:hover .text:after {
+  content: "一下";
+  padding: 0;
+  font-size: 12px;
+}
+.status-mod .mo:hover .count {
+  display: none;
+}
+.status-mod .comment {
+  padding-left: 24px;
+  background: transparent url("img/icon-comment.png") no-repeat scroll 0 0;
+}
+.status-mod .comment .count {
+  margin-left: 5px;
+}
+.status-mod .comment:hover {
+  background-image: url("img/icon-comment-active.png");
+}
+.status-mod .comment:hover .count {
+  color: #aa1e32;
+}
+/* ---- IE hacks ---- */
+.lt-ie8 .topbar .me {
+  margin-right: 50px;
+}
+.lt-ie8 .topbar .notify {
+  margin-left: 0;
+}

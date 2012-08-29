@@ -1,0 +1,39 @@
+// Set font for forms
+label,
+input,
+button,
+select,
+textarea {
+  font: normal 12px/1.5 baseFontFamily
+}
+// Reset height since textareas have rows
+textarea {
+  height: auto;
+}
+// Everything else
+input, textarea
+  color: placeholderText
+  border: 1px solid inputBorder
+  &:focus
+    border-color: rgba(0, 0, 0, .3);
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    box-shadow(unquote("inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px rgba(0,0,0,.3)"));
+
+.help-inline
+  display: none
+  font-size: 14px
+  margin-left: 15px
+  padding-left: 25px
+  background: transparent none no-repeat scroll 0 center
+
+.control-group
+  &.error
+    .help-inline
+      display: inline
+      color: errorText
+      background-image: url(img/icon-state-error-m.png)
+  &.valid
+    .help-inline
+      display: inline
+      background-image: url(img/icon-state-success-m.png)

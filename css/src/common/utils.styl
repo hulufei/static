@@ -1,0 +1,26 @@
+/* utils */
+size(w, h)
+  width: w
+  height: h
+
+square(wh)
+  size(wh, wh)
+
+ie7-inline-block()
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+
+hide-text()
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+
+px2em(px)
+  unit(px/baseFontSize, em)
+
+// Opacity
+opacity(o)
+  opacity: o
+  filter: unquote("alpha(opacity=" + o * 100 + ")")
